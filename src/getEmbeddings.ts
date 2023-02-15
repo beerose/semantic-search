@@ -4,7 +4,7 @@ import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
 import { PineconeVector, PineconeVectorPending, PostContent } from "./types.js";
 import { OPENAI_EMBEDDING_MODEL } from "./types.js";
 
-export async function getEmbeddingsForPostContent({
+export async function getEmbeddings({
   content,
   id,
   title,

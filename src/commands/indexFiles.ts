@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { PineconeClient } from "pinecone-client";
 import glob from "tiny-glob";
 
-import { getEmbeddingsForPostContent } from "../getEmbeddings.js";
+import { getEmbeddings } from "../getEmbeddings.js";
 import { mdxToPlainText } from "../mdxToPlainText.js";
 import { splitIntoChunks } from "../splitIntoChunks.js";
 import { titleCase } from "../titleCase.js";
@@ -52,7 +52,7 @@ export async function indexFiles(postsDir: string) {
     console.log(`Split post "${title}" into ${chunks.length} chunks.`);
 
     console.log("Generating embeddings for post content...");
-    const itemEmbeddings = await getEmbeddingsForPostContent({
+    const itemEmbeddings = await getEmbeddings({
       id: post,
       content: { chunks },
       title,
