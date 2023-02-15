@@ -1,9 +1,14 @@
 {
   "name": "@beerose/semantic-search",
-  "author": "beerose",
   "license": "MIT",
   "version": "1.0.0-beta.1",
-  "description": "",
+  "description": "An OpenAI-powered CLI to build a semantic search index from your MDX files.",
+  "author": {
+    "email": "alexsandra.sikora@gmail.com",
+    "name": "Alkandra Sikora",
+    "url": "https://aleksandra.codes"
+  },
+  "homepage": "https://github.com/beerose/semantic-search/blob/main/README.md",
   "bin": {
     "@beerose/semantic-search": "bin/cli.js"
   },
