@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+jobs:
+  test-build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "pnpm"
+
+      - name: Install
+        id: install
+        run: |
+          pnpm install --no-optional --frozen-lockfile ${{ env.IS_DEPENDABOT == 0 }}
+
+      - name: Commit lockfile
+        if: ${{ env.IS_DEPENDABOT == 1 }}
+        uses: EndBug/add-and-commit@v9
+        with:
+          { add: "pnpm-lock.yaml", fetch: false, message: "Update lockfile" }
+
+      - name: Run linter
+        run: pnpm lint --quiet
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        run: pnpm build
+
+env:
+  IS_DEPENDABOT: ${{ secrets.IS_DEPENDABOT }}
