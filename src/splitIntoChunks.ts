@@ -1,4 +1,9 @@
-import GPT3Tokenizer from "gpt3-tokenizer";
+import GPT3TokenizerImport from "gpt3-tokenizer";
+
+const GPT3Tokenizer =
+  "default" in GPT3TokenizerImport
+    ? GPT3TokenizerImport.default
+    : GPT3TokenizerImport;
 
 import { Chunk, MAX_INPUT_TOKENS } from "./types.js";
 
@@ -14,7 +19,7 @@ export const splitIntoChunks = (
   };
   let start = 0;
 
-  const tokenizer = new GPT3Tokenizer.default({ type: "gpt3" });
+  const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
   const { text } = tokenizer.encode(content);
 
   for (const word of text) {
@@ -28,7 +33,7 @@ export const splitIntoChunks = (
       });
       start += text.length + 1;
       chunk = {
-        tokens: [],
+        tokens: [word],
         start,
         end: start,
       };
