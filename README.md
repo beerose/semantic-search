@@ -41,6 +41,14 @@ $ @beerose/semantic-search --help
 You can use the `semanticQuery` function exported from this library and
 integrate it with your website or application.
 
+Install deps:
+
+```sh
+$ pnpm add pinecone-client openai @beerose/semantic-search
+
+# or `yarn add` or `npm i`
+```
+
 An example usage:
 
 ```ts
