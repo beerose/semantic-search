@@ -35,6 +35,10 @@ cli
     }
   });
 
+cli.command("", "").action(() => {
+  cli.outputHelp();
+});
+
 cli.help();
 
 try {
