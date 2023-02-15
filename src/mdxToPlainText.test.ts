@@ -1,6 +1,6 @@
 import { assert, describe, it } from "vitest";
 
-import { mdxToPlainText } from "../src/mdxToPlainText";
+import { mdxToPlainText } from "./mdxToPlainText.js";
 
 describe("mdxToPlainText", () => {
   it("should remove JSX elements", async () => {
