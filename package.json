@@ -1,8 +1,8 @@
 {
   "name": "@beerose/semantic-search",
   "author": "beerose",
-  "license": "ISC",
-  "version": "1.0.0",
+  "license": "MIT",
+  "version": "1.0.0-beta.1",
   "description": "",
   "bin": {
     "@beerose/semantic-search": "bin/cli.js"
@@ -22,7 +22,8 @@
     "openai"
   ],
   "files": [
-    "dist", "bin"
+    "dist",
+    "bin"
   ],
   "scripts": {
     "build": "tsc -P tsconfig.build.json",

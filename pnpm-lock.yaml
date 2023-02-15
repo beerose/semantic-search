@@ -10,7 +10,6 @@ specifiers:
   eslint: ^8.34.0
   fs: 0.0.1-security
   gpt3-tokenizer: ^1.1.5
-  mdast: ^3.0.0
   node-fetch: ^3.3.0
   openai: ^3.1.0
   pinecone-client: ^1.0.1
@@ -33,7 +32,6 @@ dependencies:
   dotenv: 16.0.3
   fs: 0.0.1-security
   gpt3-tokenizer: 1.1.5
-  mdast: 3.0.0
   node-fetch: 3.3.0
   openai: 3.1.0
   pinecone-client: 1.0.1
@@ -2323,11 +2321,6 @@ packages:
     resolution: {integrity: sha512-tGvhT94e+cVnQt8JWE9/b3cUQZWS732TJxXHktvP+BYo62PpYD53Ls/6cC60rW21dW+txxiM4zMdc6abASvZKA==}
     dependencies:
       '@types/mdast': 3.0.10
-    dev: false
-
-  /mdast/3.0.0:
-    resolution: {integrity: sha512-xySmf8g4fPKMeC07jXGz971EkLbWAJ83s4US2Tj9lEdnZ142UP5grN73H1Xd3HzrdbU5o9GYYP/y8F9ZSwLE9g==}
-    deprecated: '`mdast` was renamed to `remark`'
     dev: false
 
   /merge2/1.4.1:

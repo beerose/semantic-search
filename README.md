@@ -161,10 +161,18 @@ Tests:
 
 ## 👩‍💻 Local development
 
+Install deps and build the project:
+
 ```sh
 pnpm i
 
 pnpm build
+```
+
+Run the CLI:
+
+```sh
+node bin/cli.js
 ```
 
 ## 🧪 Running tests
