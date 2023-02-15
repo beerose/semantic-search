@@ -1,4 +1,5 @@
 import type { Code, Content, Paragraph, Parent, Text } from "mdast";
+import { Image, ImageReference } from "mdast";
 import type { Root } from "remark-mdx";
 import type { Plugin } from "unified";
 
@@ -76,9 +77,7 @@ function clean(values: Node[]): Node[] {
   return result;
 }
 
-function image(
-  node: import("mdast").Image | import("mdast").ImageReference
-): Text {
+function image(node: Image | ImageReference): Text {
   const title = "title" in node ? node.title : "";
   return { type: "text", value: node.alt || title || "" };
 }
@@ -92,6 +91,7 @@ function paragraph(node: Paragraph): Paragraph {
 }
 
 function children(node: Extract<Node, Parent>): Content[] {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   return node.children || [];
 }
 

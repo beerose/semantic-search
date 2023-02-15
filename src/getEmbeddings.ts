@@ -1,15 +1,15 @@
 import type { OpenAIApi } from "openai";
 
-import { isRateLimitExceeded } from "./isRateLimitExceeded";
-import { PineconeVector, PineconeVectorPending, PostContent } from "./types";
-import { openaiEmbeddingModel } from "./types";
+import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
+import { PineconeVector, PineconeVectorPending, PostContent } from "./types.js";
+import { OPENAI_EMBEDDING_MODEL } from "./types.js";
 
 export async function getEmbeddingsForPostContent({
   content,
   id,
   title,
   openai,
-  model = openaiEmbeddingModel,
+  model = OPENAI_EMBEDDING_MODEL,
 }: {
   content: PostContent;
   title: string;

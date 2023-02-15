@@ -1,12 +1,10 @@
-import cac from "cac";
+import { cac } from "cac";
 import dotenv from "dotenv";
 
-import { indexFiles } from "../commands/indexFiles";
-import { search } from "../commands/search";
-import { polyfillFetch } from "../polyfillFetch";
+import { indexFiles } from "../commands/indexFiles.js";
+import { search } from "../commands/search.js";
 
 dotenv.config();
-await polyfillFetch();
 
 const cli = cac("@beerose/semantic-search");
 

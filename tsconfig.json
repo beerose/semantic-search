@@ -2,11 +2,12 @@
   "compilerOptions": {
     "module": "NodeNext",
     "target": "ES2022",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "esModuleInterop": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true
   },
-  "include": ["./src"]
+  "include": ["src"]
 }

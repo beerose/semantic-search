@@ -1,6 +1,6 @@
 import GPT3Tokenizer from "gpt3-tokenizer";
 
-import { Chunk, MAX_INPUT_TOKENS } from "./types";
+import { Chunk, MAX_INPUT_TOKENS } from "./types.js";
 
 export const splitIntoChunks = (
   content: string,
@@ -14,7 +14,7 @@ export const splitIntoChunks = (
   };
   let start = 0;
 
-  const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
+  const tokenizer = new GPT3Tokenizer.default({ type: "gpt3" });
   const { text } = tokenizer.encode(content);
 
   for (const word of text) {

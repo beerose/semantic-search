@@ -4,11 +4,11 @@ import { Configuration, OpenAIApi } from "openai";
 import { PineconeClient } from "pinecone-client";
 import glob from "tiny-glob";
 
-import { getEmbeddingsForPostContent } from "../getEmbeddings";
-import { mdxToPlainText } from "../mdxToPlainText";
-import { splitIntoChunks } from "../splitIntoChunks";
-import { titleCase } from "../titleCase";
-import type { PineconeMetadata } from "../types";
+import { getEmbeddingsForPostContent } from "../getEmbeddings.js";
+import { mdxToPlainText } from "../mdxToPlainText.js";
+import { splitIntoChunks } from "../splitIntoChunks.js";
+import { titleCase } from "../titleCase.js";
+import type { PineconeMetadata } from "../types.js";
 
 const getTitle = (content: string, path: string): string => {
   const title = /(?<=title: ).*/.exec(content)?.[0];

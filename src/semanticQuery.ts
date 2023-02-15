@@ -1,8 +1,8 @@
 import type { CreateEmbeddingResponse, OpenAIApi } from "openai";
 import type { PineconeClient } from "pinecone-client";
 
-import { isRateLimitExceeded } from "./isRateLimitExceeded";
-import { openaiEmbeddingModel, PineconeMetadata } from "./types";
+import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
+import { OPENAI_EMBEDDING_MODEL, PineconeMetadata } from "./types.js";
 
 export interface SemanticQueryOptions {
   /** Default: 10 */
@@ -22,7 +22,7 @@ export async function semanticQuery(
     embed = (
       await openai.createEmbedding({
         input: query,
-        model: openaiEmbeddingModel,
+        model: OPENAI_EMBEDDING_MODEL,
       })
     ).data;
   } catch (err) {

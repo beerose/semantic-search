@@ -34,5 +34,5 @@ export type Chunk = {
   end: number;
 };
 
-export const openaiEmbeddingModel = "text-embedding-ada-002";
+export const OPENAI_EMBEDDING_MODEL = "text-embedding-ada-002";
 export const MAX_INPUT_TOKENS = 100;
