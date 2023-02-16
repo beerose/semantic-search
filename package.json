@@ -12,7 +12,7 @@
   "bin": {
     "@beerose/semantic-search": "bin/cli.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
@@ -31,7 +31,7 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsc -P tsconfig.build.json",
+    "build": "tsup src/index.ts src/bin/cli.ts --format cjs,esm --dts --treeshake --minify",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src",
@@ -43,8 +43,9 @@
     "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",
     "prettier": "^2.8.4",
-    "typescript": "^4.9.5",
-    "vitest": "^0.28.5"
+    "typescript": "^5.0.0-beta",
+    "vitest": "^0.28.5",
+    "tsup": "^6.6.3"
   },
   "dependencies": {
     "@types/mdast": "^3.0.10",
