@@ -5,7 +5,7 @@
   "description": "An OpenAI-powered CLI to build a semantic search index from your MDX files.",
   "author": {
     "email": "alexsandra.sikora@gmail.com",
-    "name": "Alkandra Sikora",
+    "name": "Aleksandra Sikora",
     "url": "https://aleksandra.codes"
   },
   "homepage": "https://github.com/beerose/semantic-search/blob/main/README.md",
