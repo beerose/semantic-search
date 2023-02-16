@@ -4,11 +4,25 @@ An OpenAI-powered CLI to build a semantic search index from your MDX files. It
 allows you to perform complex searches across your content and integrate it with
 your platform.
 
+## 🧳 Prerequisites
+
+This project uses [OpenAI](https://openai.com/) to generate vector embeddings
+and [Pinecone](https://pinecone.io/) to host the embeddings, which means you
+need to have accounts in OpenAI and Pinecone to use it.
+
 ## 🚀 CLI Usage
 
+The CLI requires four env keys:
+
 ```sh
-$ @beerose/semantic-search
+OPENAI_API_KEY=
+
+PINECONE_API_KEY=
+PINECONE_BASE_URL=
+PINECONE_NAMESPACE=
 ```
+
+Make sure to add them before using it!
 
 ### 🛠 Commands:
 
