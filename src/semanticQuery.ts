@@ -1,8 +1,7 @@
-import type { CreateEmbeddingResponse, OpenAIApi } from "openai";
+import type { OpenAIApi } from "openai";
 import type { PineconeClient } from "pinecone-client";
 
-import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
-import { OPENAI_EMBEDDING_MODEL, PineconeMetadata } from "./types.js";
+import { OPENAI_EMBEDDING_MODEL, SemanticSearchMetadata } from "./types.js";
 
 export interface SemanticQueryOptions {
   /** Default: 10 */
@@ -13,27 +12,15 @@ export interface SemanticQueryOptions {
 export async function semanticQuery(
   query: string,
   openai: OpenAIApi,
-  pinecone: PineconeClient<PineconeMetadata>,
+  pinecone: PineconeClient<SemanticSearchMetadata>,
   options?: SemanticQueryOptions
 ) {
-  let embed: CreateEmbeddingResponse | null = null;
-
-  try {
-    embed = (
-      await openai.createEmbedding({
-        input: query,
-        model: OPENAI_EMBEDDING_MODEL,
-      })
-    ).data;
-  } catch (err) {
-    if (isRateLimitExceeded(err)) {
-      throw new Error(
-        "OpenAI rate limit exceeded. Try again in a few minutes."
-      );
-    }
-
-    throw err;
-  }
+  const embed = (
+    await openai.createEmbedding({
+      input: query,
+      model: OPENAI_EMBEDDING_MODEL,
+    })
+  ).data;
 
   if (!embed.data.length || !embed.data[0]) {
     throw new Error(`Error generating embedding for query: ${query}`);

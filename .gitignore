@@ -17,3 +17,6 @@ pnpm-debug.log*
 .env.*.local
 
 todo.md
+
+# pnpm pack
+*.tgz

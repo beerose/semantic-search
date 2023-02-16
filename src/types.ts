@@ -1,4 +1,4 @@
-export type PineconeMetadata = {
+export type SemanticSearchMetadata = {
   id: string;
   title: string;
   text: string;
@@ -6,16 +6,10 @@ export type PineconeMetadata = {
   end: number;
 };
 
-export type PineconeVector = {
+export type SemanticSearchVector = {
   id: string;
   values: number[];
-  metadata: PineconeMetadata;
-};
-
-export type PineconeVectorPending = {
-  id: string;
-  input: string;
-  metadata: PineconeMetadata;
+  metadata: SemanticSearchMetadata;
 };
 
 export interface PostDetails {

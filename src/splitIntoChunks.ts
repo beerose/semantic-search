@@ -1,9 +1,4 @@
-import GPT3TokenizerImport from "gpt3-tokenizer";
-
-const GPT3Tokenizer =
-  "default" in GPT3TokenizerImport
-    ? GPT3TokenizerImport.default
-    : GPT3TokenizerImport;
+import GPT3Tokenizer from "gpt3-tokenizer";
 
 import { Chunk, MAX_INPUT_TOKENS } from "./types.js";
 

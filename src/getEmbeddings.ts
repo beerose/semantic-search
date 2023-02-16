@@ -1,8 +1,11 @@
 import type { OpenAIApi } from "openai";
 
 import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
-import { PineconeVector, PineconeVectorPending, PostContent } from "./types.js";
-import { OPENAI_EMBEDDING_MODEL } from "./types.js";
+import {
+  type PostContent,
+  type SemanticSearchVector,
+  OPENAI_EMBEDDING_MODEL,
+} from "./types.js";
 
 export async function getEmbeddings({
   content,
@@ -17,24 +20,22 @@ export async function getEmbeddings({
   openai: OpenAIApi;
   model?: string;
 }) {
-  const pendingVectors: PineconeVectorPending[] = content.chunks.map(
-    ({ text, start, end }, index) => {
-      return {
-        id: `${id}:${index}`,
-        input: text,
-        metadata: {
-          index,
-          id,
-          title,
-          text,
-          end,
-          start,
-        },
-      };
-    }
-  );
+  const pendingVectors = content.chunks.map(({ text, start, end }, index) => {
+    return {
+      id: `${id}:${index}`,
+      input: text,
+      metadata: {
+        index,
+        id,
+        title,
+        text,
+        end,
+        start,
+      },
+    };
+  });
 
-  const vectors: PineconeVector[] = [];
+  const vectors: SemanticSearchVector[] = [];
 
   let timeout = 10_000;
   while (pendingVectors.length) {
@@ -46,7 +47,7 @@ export async function getEmbeddings({
         model,
       });
 
-      const vector: PineconeVector = {
+      const vector: SemanticSearchVector = {
         id: pendingVector.id,
         metadata: pendingVector.metadata,
         values: embed.data[0]?.embedding || [],

@@ -8,7 +8,7 @@ import { getEmbeddings } from "../getEmbeddings.js";
 import { mdxToPlainText } from "../mdxToPlainText.js";
 import { splitIntoChunks } from "../splitIntoChunks.js";
 import { titleCase } from "../titleCase.js";
-import type { PineconeMetadata } from "../types.js";
+import type { SemanticSearchMetadata } from "../types.js";
 
 const getTitle = (content: string, path: string): string => {
   const title = /(?<=title: ).*/.exec(content)?.[0];
@@ -30,7 +30,7 @@ export async function indexFiles(postsDir: string) {
     })
   );
 
-  const pinecone = new PineconeClient<PineconeMetadata>({
+  const pinecone = new PineconeClient<SemanticSearchMetadata>({
     apiKey: process.env.PINECONE_API_KEY!,
     baseUrl: process.env.PINECONE_BASE_URL!,
     namespace: process.env.PINECONE_NAMESPACE!,

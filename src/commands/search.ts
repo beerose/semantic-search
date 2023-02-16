@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { PineconeClient } from "pinecone-client";
 
 import { semanticQuery } from "../semanticQuery.js";
-import { PineconeMetadata } from "../types.js";
+import { SemanticSearchMetadata } from "../types.js";
 
 export async function search(query: string) {
   const openai = new OpenAIApi(
@@ -11,7 +11,7 @@ export async function search(query: string) {
     })
   );
 
-  const pinecone = new PineconeClient<PineconeMetadata>({
+  const pinecone = new PineconeClient<SemanticSearchMetadata>({
     apiKey: process.env.PINECONE_API_KEY!,
     baseUrl: process.env.PINECONE_BASE_URL!,
     namespace: process.env.PINECONE_NAMESPACE!,
