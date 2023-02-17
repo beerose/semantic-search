@@ -15,12 +15,13 @@ need to have accounts in OpenAI and Pinecone to use it.
 
 After creating an account in Pinecone, go to the dashboard and click on the
 `Create Index` button:
-![CleanShot 2023-02-17 at 16 11 54@2x](https://user-images.githubusercontent.com/9019397/219693863-ccaa2105-db44-4838-b94b-40689945c8f2.png)
+
+![CleanShot 2023-02-17 at 16 10 32@2x](https://user-images.githubusercontent.com/9019397/219693945-6d656f53-6dc2-4010-8ee8-f9d3e69913a1.png)
 
 Fill the form with your new index name (e.g. your blog name) and set the number
 of dimensions to 1536:
 
-![CleanShot 2023-02-17 at 16 10 32@2x](https://user-images.githubusercontent.com/9019397/219693945-6d656f53-6dc2-4010-8ee8-f9d3e69913a1.png)
+![CleanShot 2023-02-17 at 16 11 54@2x](https://user-images.githubusercontent.com/9019397/219693863-ccaa2105-db44-4838-b94b-40689945c8f2.png)
 
 </details>
 
@@ -115,7 +116,7 @@ const result = await semanticQuery("hello world", openai, pinecone);
 
 ## ✨ How does it work?
 
-Semantic search is a system that can understand the meaning of words in
+Semantic search can understand the meaning of words in
 documents and return results that are more relevant to the user's intent.
 
 This tool uses [OpenAI](https://openai.com/) to generate vector embeddings with
