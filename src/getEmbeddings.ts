@@ -1,6 +1,6 @@
 import type { OpenAIApi } from "openai";
 
-import { isRateLimitExceeded } from "./isRateLimitExceeded.js";
+import { isRateLimitExceeded } from "./errors.js";
 import {
   type PostContent,
   type SemanticSearchVector,
