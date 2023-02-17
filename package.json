@@ -1,7 +1,7 @@
 {
   "name": "@beerose/semantic-search",
   "license": "MIT",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "description": "An OpenAI-powered CLI to build a semantic search index from your MDX files.",
   "author": {
     "email": "alexsandra.sikora@gmail.com",
@@ -53,7 +53,6 @@
     "cac": "^6.7.14",
     "dotenv": "^16.0.3",
     "gpt3-tokenizer": "^1.1.5",
-    "node-fetch": "^3.3.0",
     "openai": "^3.1.0",
     "pinecone-client": "^1.0.1",
     "remark": "^14.0.2",
@@ -62,7 +61,6 @@
     "remark-mdx": "^2.3.0",
     "remark-smartypants": "^2.0.0",
     "tiny-glob": "^0.2.9",
-    "ts-node": "^10.9.1",
     "unified": "^10.1.2"
   }
 }
