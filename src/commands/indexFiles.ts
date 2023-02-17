@@ -48,7 +48,9 @@ export async function indexFiles(postsDir: string) {
   for (const post of files) {
     if (!post.endsWith(".mdx") && !post.endsWith(".md")) continue;
 
-    s.start(`[${count}/${files.length}] Processing file...`);
+    const fileName = post.split("/").pop();
+
+    s.start(`[${count}/${files.length}] Processing file: ${fileName}`);
 
     const rawContent = fs.readFileSync(post, "utf-8");
     const title = getTitle(rawContent, post);
@@ -71,7 +73,7 @@ export async function indexFiles(postsDir: string) {
       vectors: itemEmbeddings,
     });
     s.stop(
-      `[${count}/${files.length}] Upserted ${itemEmbeddings.length} vectors for file: ${title}`
+      `[${count}/${files.length}] Upserted ${itemEmbeddings.length} vectors for file: ${fileName}`
     );
     count++;
   }
