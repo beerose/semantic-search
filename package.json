@@ -1,7 +1,7 @@
 {
   "name": "@beerose/semantic-search",
   "license": "MIT",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "An OpenAI-powered CLI to build a semantic search index from your MDX files.",
   "author": {
     "email": "alexsandra.sikora@gmail.com",

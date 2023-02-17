@@ -114,10 +114,13 @@ const pinecone = new PineconeClient<PineconeMetadata>({
 const result = await semanticQuery("hello world", openai, pinecone);
 ```
 
+Here's an example API route from [aleksandra.codes](https://aleksandra.codes):
+https://github.com/beerose/aleksandra.codes/blob/main/api/search.ts
+
 ## ✨ How does it work?
 
-Semantic search can understand the meaning of words in
-documents and return results that are more relevant to the user's intent.
+Semantic search can understand the meaning of words in documents and return
+results that are more relevant to the user's intent.
 
 This tool uses [OpenAI](https://openai.com/) to generate vector embeddings with
 a `text-embedding-ada-002` model.
@@ -153,6 +156,10 @@ command, which:
 
 1. Creates an embedding for a provided query.
 2. Sends a request to Pinecone with the embedding.
+
+## 🍿 Demo
+
+![](https://user-images.githubusercontent.com/9019397/219777236-d9c4cbb6-b408-40ca-be22-cd01eefa4e53.gif)
 
 ## 📦 What's inside?
 
