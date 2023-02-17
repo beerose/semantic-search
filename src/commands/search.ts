@@ -1,14 +1,10 @@
 import { Configuration, OpenAIApi } from "openai";
 import { PineconeClient } from "pinecone-client";
 
-import { fetchPolyfill } from "../fetchPolyfill.js";
-
 import { semanticQuery } from "../semanticQuery.js";
 import { SemanticSearchMetadata } from "../types.js";
 
 export async function search(query: string) {
-  await fetchPolyfill();
-
   const openai = new OpenAIApi(
     new Configuration({
       apiKey: process.env.OPENAI_API_KEY!,
