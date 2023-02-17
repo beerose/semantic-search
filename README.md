@@ -6,11 +6,39 @@ your platform.
 
 ## 🧳 Prerequisites
 
-This project uses [OpenAI](https://openai.com/) to generate vector embeddings
+This project uses [OpenAI](https://openai.com/api) to generate vector embeddings
 and [Pinecone](https://pinecone.io/) to host the embeddings, which means you
 need to have accounts in OpenAI and Pinecone to use it.
 
+<details>
+<summary>Setting up a Pinecone project</summary>
+
+After creating an account in Pinecone, go to the dashboard and click on the
+`Create Index` button:
+![CleanShot 2023-02-17 at 16 11 54@2x](https://user-images.githubusercontent.com/9019397/219693863-ccaa2105-db44-4838-b94b-40689945c8f2.png)
+
+Fill the form with your new index name (e.g. your blog name) and set the number
+of dimensions to 1536:
+
+![CleanShot 2023-02-17 at 16 10 32@2x](https://user-images.githubusercontent.com/9019397/219693945-6d656f53-6dc2-4010-8ee8-f9d3e69913a1.png)
+
+</details>
+
 ## 🚀 CLI Usage
+
+<details>
+<summary>How to get your env keys from Pinecone and OpenAI?</summary>
+
+**Pinecone**
+
+![CleanShot 2023-02-17 at 16 15 32@2x](https://user-images.githubusercontent.com/9019397/219693780-bee0e02b-3961-4a92-b505-8076ef67295e.png)
+![CleanShot 2023-02-17 at 16 13 22@2x](https://user-images.githubusercontent.com/9019397/219693831-794c88ce-a763-4415-84f6-08b00c0aab0e.png)
+
+**OpenAI**
+
+![CleanShot 2023-02-17 at 16 18 00@2x](https://user-images.githubusercontent.com/9019397/219693739-3c5e0b31-425b-4cef-8aa9-066dd24d9ab2.png)
+
+</details>
 
 The CLI requires four env keys:
 
@@ -191,7 +219,7 @@ pnpm i
 pnpm build
 ```
 
-Run the CLI:
+Run the CLI locally:
 
 ```sh
 node bin/cli.js
